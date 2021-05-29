@@ -20,4 +20,4 @@ def get_hit_count():
 @app.route('/')
 def hello():
     count = get_hit_count()
-    return 'Deploy by Jenkins! I have been seen {} times.\n'.format(count)
+    return 'Updated at {}</br>Deploy by Jenkins! I have been seen {} times.\n'.format(time.time, count)
