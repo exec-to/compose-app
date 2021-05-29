@@ -1,4 +1,5 @@
 import time
+import datetime
 
 import redis
 from flask import Flask
@@ -19,5 +20,6 @@ def get_hit_count():
 
 @app.route('/')
 def hello():
+    dt_now = datetime.datetime.now()
     count = get_hit_count()
-    return 'Updated at {}</br>Deploy by Jenkins! I have been seen {} times.\n'.format(time.time, count)
+    return 'Updated at {}</br>Deploy by Jenkins! I have been seen {} times.\n'.format(dt_now, count)
